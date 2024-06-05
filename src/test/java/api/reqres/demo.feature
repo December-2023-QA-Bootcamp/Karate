@@ -2,7 +2,7 @@
 Feature: Demostration of Java, JS in Karate Framework
 
   Scenario: Use of Custom Java code
-    * def javaUtil = Java.type('util.JavaUtil');
+    * def javaUtil = Java.type('api.util.JavaUtil');
     # static method
     * print javaUtil.getTodaysDate()
     # non-static method

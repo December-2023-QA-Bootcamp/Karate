@@ -8,17 +8,21 @@ function fn()
   }
   
   var config = { // base config JSON
+  	uiUrl: 'https://portal.cms.gov/portal/',
     baseUrl: 'https://reqres.in/'
   };
   
   if (env == 'stage') {
     // over-ride only those that need to be
+    config.uiUrl = 'https://stg-portal.cms.gov/portal/';
     config.baseUrl = 'https://stage-reqres.in/';
   } else if (env == 'prod') {
+	config.uiUrl = 'https://prod-portal.cms.gov/portal/';
     config.baseUrl = 'https://prod-reqres.in/';
   }
   
-  config.constant = karate.callSingle('classpath:util/constant.js');
+  config.constant = karate.callSingle('classpath:api/util/constant.js');
+  config.schema = karate.callSingle('classpath:api/util/schema.js');
   
   // don't waste time waiting for a connection or if servers don't respond within 5 seconds
   karate.configure('connectTimeout', 5000);

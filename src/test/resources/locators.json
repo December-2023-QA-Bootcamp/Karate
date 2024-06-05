@@ -1,0 +1,5 @@
+{
+	"newUserBtn":"#cms-newuser-reg",
+	"selectApplicationBtn":".ng-select-container",
+	"bcrsOpt":"//span[@class='ng-option-label' and text()='BCRS Web']"
+}
